@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/books_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fr.publicis.henripoitier.utils.uiutils.AppToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:cart_btn="true"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="@string/books_fragment_title" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/endContentGuideline"
+        app:layout_constraintStart_toStartOf="@id/startContentGuideline"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/books_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:visibility="visible" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/info_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/error_loading_books"
+        app:layout_constraintBottom_toTopOf="@id/centerContentGuideline"
+        app:layout_constraintEnd_toEndOf="@id/endContentGuideline"
+        app:layout_constraintStart_toStartOf="@id/startContentGuideline" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xxl"
+        app:layout_constraintEnd_toEndOf="@id/endContentGuideline"
+        app:layout_constraintStart_toStartOf="@id/startContentGuideline"
+        app:layout_constraintTop_toBottomOf="@id/centerContentGuideline" />
+
+    <Button
+        android:id="@+id/reload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xxl"
+        android:text="@string/reload_btn"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/endContentGuideline"
+        app:layout_constraintStart_toStartOf="@id/startContentGuideline"
+        app:layout_constraintTop_toBottomOf="@id/centerContentGuideline"
+        tools:visibility="gone" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerContentGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startContentGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/spacing_m" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endContentGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/spacing_m" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

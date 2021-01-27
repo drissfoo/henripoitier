@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/cover_imageView"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/content_desc_cover"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/hp_cover" />
+
+    <TextView
+        android:id="@+id/book_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_s"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:layout_marginEnd="@dimen/spacing_s"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toEndOf="@id/cover_imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Henri Potier à l'école des sorciers" />
+
+    <TextView
+        android:id="@+id/book_desc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_s"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:layout_marginEnd="@dimen/spacing_s"
+        android:layout_marginBottom="@dimen/spacing_m"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="3"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toEndOf="@id/cover_imageView"
+        app:layout_constraintTop_toBottomOf="@id/book_title"
+        tools:text="Après la mort de ses parents (Lily et James Potier), Henri est recueilli par sa tante Pétunia (la sœur de Lily) et son oncle Vernon à l'âge d'un an. Ces derniers, animés depuis toujours d'une haine féroce envers les parents du garçon qu'ils qualifient de gens « bizarres », voire de « monstres », traitent froidement leur neveu et demeurent indifférents aux humiliations que leur fils Dudley lui fait subir. Henri ignore tout de l'histoire de ses parents, si ce n'est qu'ils ont été tués dans un accident de voiture" />
+
+    <TextView
+        android:id="@+id/book_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_s"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:lines="1"
+        android:maxWidth="100dp"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@id/centerGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="35 €" />
+
+    <ImageView
+        android:id="@+id/add_to_cart_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_s"
+        android:contentDescription="@string/content_desc_buy_icon"
+        android:src="@drawable/ic_baseline_add_shopping_cart_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/centerGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="book_price, add_to_cart_imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

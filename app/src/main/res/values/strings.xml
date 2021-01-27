@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Henri Poitier Library</string>
+    <string name="loading_books">Chargement des livres</string>
+    <string name="loading_prices">Chargement du prix à payer</string>
+    <string name="error_loading_books">Chargement échoué \nCliquez pour réessayer</string>
+    <string name="error_loading_prices">Chargement des livres échoué \nCliquez pour réessayer</string>
+    <string name="reload_btn">Réessayer</string>
+    <string name="content_desc_cover">Coverture</string>
+    <string name="content_desc_buy_icon">Ajouter au panier</string>
+    <string name="content_desc_delete_icon">Supprimer du panier</string>
+    <string name="cart_number_items">Panier (%1$d)</string>
+    <string name="books_fragment_title">La bibliothèque d\'Henri Potier</string>
+    <string name="cart_fragment_title">Panier</string>
+    <string name="books_added_message">Livre ajouté au panier</string>
+    <string name="empty_cart_message">Panier vide, veuillez ajouter des livres</string>
+    <string name="book_count">%1$d</string>
+    <string name="book_price">Prix %1$s</string>
+    <string name="book_plus">  +  </string>
+    <string name="book_minus">  -  </string>
+    <string name="applied_promotion">Promotion appliquée %1$s</string>
+    <string name="to_pay">Payer</string>
+    <string name="total">Total</string>
+</resources>
