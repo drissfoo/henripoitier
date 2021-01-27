@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/booksListFragment">
+
+    <fragment
+        android:id="@+id/booksListFragment"
+        android:name="fr.publicis.henripoitier.ui.booklist.BooksListFragment"
+        android:label="BooksListFragment"
+        tools:layout="@layout/books_list_fragment">
+        <action
+            android:id="@+id/action_booksListFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_booksListFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="fr.publicis.henripoitier.ui.cart.CartFragment"
+        android:label="cart_fragment"
+        tools:layout="@layout/cart_fragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="fr.publicis.henripoitier.ui.bookdetail.BookDetailFragment"
+        android:label="BookDetailFragment"
+        tools:layout="@layout/book_detail_fragment">
+        <action
+            android:id="@+id/action_bookDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+</navigation>
