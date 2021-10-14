@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "fr.publicis.henripoitier"
+        applicationId 'fr.local.henripoitier'
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
