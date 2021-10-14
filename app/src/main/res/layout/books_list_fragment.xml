@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <fr.publicis.henripoitier.utils.uiutils.AppToolbar
+        <fr.local.henripoitier.utils.uiutils.AppToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
